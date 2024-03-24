@@ -7,8 +7,13 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+from jinja2 import FileSystemLoader, Environment
 
 app = Flask(__name__)
+custom_template_dir = r'C:\Users\Hp\PycharmProjects\sms_spam'
+app.jinja_loader = FileSystemLoader(custom_template_dir)
+env = Environment(loader=app.jinja_loader)
+
 app.secret_key = 'supersecretkey'
 
 ps = PorterStemmer()
