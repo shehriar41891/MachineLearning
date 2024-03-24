@@ -15,7 +15,7 @@ ps = PorterStemmer()
 Stopwords = set(stopwords.words('english'))
 
 # Load your data
-data = pd.read_csv(r'C:\Users\Hp\OneDrive\Documents\asim\softwarehouse2.csv')
+data = pd.read_csv('softwarehouse2.csv')
 
 # Function to preprocess text
 def transformtext(text):
@@ -72,6 +72,3 @@ def index():
 
     return render_template('index.html')
 
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
